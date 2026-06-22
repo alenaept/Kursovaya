@@ -42,7 +42,7 @@ const prices = ref([]);
 const selectedPriceId = ref('');
 const loadingPrices = ref(false);
 
-// Загрузка цен
+
 const loadPrices = async () => {
     loadingPrices.value = true;
     try {
@@ -56,7 +56,7 @@ const loadPrices = async () => {
     }
 };
 
-// Загрузка врачей
+
 const loadDoctors = async () => {
     loadingDoctors.value = true;
     try {
@@ -247,7 +247,7 @@ onMounted(() => {
                     {{ success }}
                 </div>
                 
-                <!-- БЛОК ЗАПИСИ НА ПРИЕМ -->
+
                 <div class="booking-card">
                     <h2 class="section-title">Запись на прием</h2>
                     
@@ -316,23 +316,14 @@ onMounted(() => {
                     </div>
                 </div>
                 
-                <!-- БЛОК МОИ ЗАПИСИ -->
+      
                 <div class="appointments-card">
                     <h2 class="section-title">Мои записи</h2>
                     
-                    <!-- Новая созданная запись -->
-                    <div v-if="lastCreatedAppointment" class="appointment-item new-appointment">
-                        <div class="appointment-badge">Новая запись</div>
-                        <div class="appointment-info">
-                            <div class="appointment-doctor">{{ lastCreatedAppointment.doctor_name }}</div>
-                            <div class="appointment-service">{{ lastCreatedAppointment.service }}</div>
-                            <div class="appointment-datetime">{{ lastCreatedAppointment.date }} в {{ lastCreatedAppointment.time }}</div>
-                            <div class="appointment-price">{{ lastCreatedAppointment.price.toLocaleString() }} ₽</div>
-                            <div v-if="lastCreatedAppointment.reason !== 'Не указана'" class="appointment-reason">Причина: {{ lastCreatedAppointment.reason }}</div>
-                        </div>
-                    </div>
+            
                     
-                    <!-- Существующие записи из БД -->
+                    
+  
                     <div v-if="appointments && appointments.length > 0">
                         <div v-for="appointment in appointments" :key="appointment.id" class="appointment-item">
                             <div class="appointment-info">
@@ -354,7 +345,7 @@ onMounted(() => {
                     </div>
                 </div>
                 
-                <!-- ОСТАЛЬНЫЕ КАРТОЧКИ -->
+    
                 <div class="info-grid">
                     <div class="user-info-card">
                         <h2 class="section-title">Мои данные</h2>

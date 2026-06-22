@@ -1,5 +1,6 @@
 <script setup>
 import Header from '@/Components/Header.vue';
+import Footer from '@/Components/Footer.vue';
 import { ref, onMounted } from 'vue';
 
 const props = defineProps({
@@ -107,6 +108,7 @@ onMounted(() => {
             </div>
         </div>
     </AuthenticatedLayout>
+        <Footer />
 </template>
 
 <style scoped>

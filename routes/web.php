@@ -11,6 +11,7 @@ use App\Models\SpecialOffer;
 use App\Models\Review;
 use App\Models\Request as ClientRequest;
 use App\Http\Controllers\User\DashboardController;
+use App\Http\Controllers\Admin\StatsController;
 
 Route::get('/', [PageController::class, 'main'])->name('main');
 
@@ -48,14 +49,18 @@ Route::middleware('auth')->group(function () {
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', function () {
+        $statsController = new StatsController();
         return Inertia::render('Admin/Dashboard', [
+            'stats' => $statsController->getStats(),
             'doctors' => \App\Models\Doctor::all(),
             'services' => \App\Models\Service::all(),
             'offers' => \App\Models\SpecialOffer::all(),
             'requests' => \App\Models\Request::all(),
             'reviews' => \App\Models\Review::all(),
+            'prices' => \App\Models\Price::all(),
         ]);
     })->name('dashboard');
+Route::get('/stats/export', [StatsController::class, 'export'])->name('stats.export');
 });
 
 
