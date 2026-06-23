@@ -2,17 +2,7 @@
 import Header from '@/Components/Header.vue';
 import Footer from '@/Components/Footer.vue';
 
-const goToGuarantees = () => {
-    window.location.href = '/guarantees';
-};
 
-const goToSpecialOffers = () => {
-    window.location.href = '/special-offers';
-};
-
-const goToNews = () => {
-    window.location.href = '/news';
-};
 </script>
 
 <template>

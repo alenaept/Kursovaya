@@ -85,7 +85,9 @@ const loadReviews = async () => {
         loading.value.reviews = false;
     }
 };
-
+const goToAbout = () => {
+    router.visit('/about');
+};
 const goToServices = () => {
     router.visit('/services');
 };

@@ -23,7 +23,7 @@ const fetchPrices = async () => {
         console.log('Тип данных:', typeof data);
         console.log('Количество категорий:', Object.keys(data).length);
         
-        // Проверяем, что данные не пустые
+
         if (data && typeof data === 'object') {
             groupedPrices.value = data;
         } else {
@@ -59,7 +59,6 @@ onMounted(() => {
                 <h1 class="page-title">Цены на услуги</h1>
                 
                 <div v-if="loading" class="loading">
-                    <div class="spinner"></div>
                     <p>Загрузка цен...</p>
                 </div>
                 

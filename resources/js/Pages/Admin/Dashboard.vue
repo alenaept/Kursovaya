@@ -469,7 +469,7 @@ onMounted(() => {
                 </div>
 
                 <div v-if="loading" class="loading">
-                    <div class="spinner"></div>
+
                     <p>Загрузка...</p>
                 </div>
 

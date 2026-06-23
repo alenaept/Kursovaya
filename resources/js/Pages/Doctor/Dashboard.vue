@@ -36,10 +36,6 @@ const formatTime = (time) => {
 };
 
 
-
-onMounted(() => {
-    loadAppointments();
-});
 </script>
 
 <template>
@@ -59,7 +55,6 @@ onMounted(() => {
                 </div>
 
                 <div v-if="loading" class="loading">
-                    <div class="spinner"></div>
                     <p>Загрузка записей...</p>
                 </div>
 

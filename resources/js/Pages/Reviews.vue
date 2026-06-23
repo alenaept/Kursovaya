@@ -51,7 +51,6 @@ onMounted(() => {
         </div>
 
         <div v-else-if="loading" class="loading-state">
-          <div class="spinner"></div>
           <p>Загрузка отзывов...</p>
         </div>
 

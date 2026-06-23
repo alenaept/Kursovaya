@@ -11,7 +11,7 @@ const props = defineProps({
     appointments: Array
 });
 
-// Форма отзыва
+
 const reviewForm = useForm({
     review_text: '',
 });
@@ -320,9 +320,6 @@ onMounted(() => {
                 <div class="appointments-card">
                     <h2 class="section-title">Мои записи</h2>
                     
-            
-                    
-                    
   
                     <div v-if="appointments && appointments.length > 0">
                         <div v-for="appointment in appointments" :key="appointment.id" class="appointment-item">
@@ -369,7 +366,6 @@ onMounted(() => {
                 
                 <div class="actions-card">
                     <div class="actions-grid">
-                        <button @click="$inertia.visit(route('profile.edit'))" class="btn-outline">Редактировать профиль</button>
                         <button @click="$inertia.post(route('logout'))" class="btn-danger">Выйти</button>
                     </div>
                 </div>
@@ -423,10 +419,7 @@ onMounted(() => {
     animation: fadeIn 0.5s;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+
 
 .booking-form {
     width: 100%;
@@ -487,12 +480,12 @@ onMounted(() => {
     border-radius: 8px;
     background: white;
     cursor: pointer;
-    transition: all 0.2s;
+
 }
 
 .slot-btn:hover {
     border-color: #265B87;
-    transform: translateY(-2px);
+
 }
 
 .slot-btn.active {
@@ -538,8 +531,7 @@ onMounted(() => {
     border-radius: 12px;
     font-size: 1rem;
     font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
+
 }
 
 .btn-submit-booking:hover:not(:disabled) {
@@ -547,7 +539,7 @@ onMounted(() => {
 }
 
 .btn-submit-booking:disabled {
-    opacity: 0.5;
+background-color: #87888a;
     cursor: not-allowed;
 }
 
@@ -633,12 +625,12 @@ onMounted(() => {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s;
+    border: 2px solid #dc2626;
+    font-weight: bolder;
 }
 
 .btn-cancel:hover {
     background: #fecaca;
-    transform: scale(1.02);
 }
 
 .empty-appointments {
@@ -711,12 +703,12 @@ onMounted(() => {
     border-radius: 12px;
     cursor: pointer;
     font-weight: 600;
-    transition: all 0.2s;
+
 }
 
 .btn-submit:hover {
     background: #113dff;
-    transform: translateY(-1px);
+
 }
 
 .form-error {
@@ -744,7 +736,7 @@ onMounted(() => {
     border-radius: 12px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s;
+
 }
 
 .btn-outline {
@@ -755,17 +747,18 @@ onMounted(() => {
 
 .btn-outline:hover {
     background: white;
-    transform: translateY(-2px);
+
 }
 
 .btn-danger {
     background: #fee2e2;
     border: 2px solid #dc2626;
     color: #dc2626;
+    font-weight: bolder;
 }
 
 .btn-danger:hover {
     background: #fecaca;
-    transform: translateY(-2px);
+
 }
 </style>
