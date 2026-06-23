@@ -34,7 +34,6 @@ class DoctorController extends Controller
             ]);
             
             $validated['password'] = Hash::make($validated['password']);
-            $validated['admin_id_admin'] = auth()->guard('admin')->id() ?? 1;
             
             $doctor = Doctor::create($validated);
             
