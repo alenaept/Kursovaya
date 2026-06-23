@@ -31,10 +31,10 @@ Route::prefix('public')->group(function () {
     Route::post('/requests', [PublicRequestController::class, 'store']);
 });
 
-// ========== СВОБОДНЫЕ СЛОТЫ (публичные) ==========
+
 Route::get('/slots/{doctorId}', [AppointmentController::class, 'getDoctorAvailableSlots']);
 
-// ========== ЗАЩИЩЁННЫЕ МАРШРУТЫ ==========
+// ЗАЩИЩЁННЫЕ МАРШРУТЫ 
 Route::middleware(['auth:sanctum'])->group(function () {
     
     // Запись на приём
