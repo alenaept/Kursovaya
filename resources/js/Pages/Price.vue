@@ -75,10 +75,7 @@ onMounted(() => {
                 
                 <div v-else>
                     <div 
-                        v-for="(items, category) in groupedPrices" 
-                        :key="category" 
-                        class="category-section"
-                    >
+                        v-for="(items, category) in groupedPrices" :key="category"  class="category-section">
                         <h2 class="category-title">{{ category }}</h2>
                         
                         <div class="prices-list">
