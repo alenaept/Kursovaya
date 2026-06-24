@@ -70,7 +70,7 @@ class DoctorController extends Controller
             
             return response()->json($doctor);
         } catch (\Exception $e) {
-            \Log::error('Doctor update error: ' . $e->getMessage());
+            
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
@@ -82,7 +82,7 @@ class DoctorController extends Controller
             $doctor->delete();
             return response()->json(null, 204);
         } catch (\Exception $e) {
-            \Log::error('Doctor destroy error: ' . $e->getMessage());
+            
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
