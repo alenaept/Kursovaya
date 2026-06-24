@@ -25,20 +25,5 @@ class DoctorController extends Controller
     }
     
 
-    public function show($id)
-    {
-        $doctor = Doctor::select(
-                'id_doctor', 
-                'first_name', 
-                'last_name', 
-                'photo_url', 
-                'experience_years',
-                'email',
-                'phone',
-                'date_of_birth'
-            )
-            ->findOrFail($id);
-        
-        return response()->json($doctor);
-    }
+    
 }
