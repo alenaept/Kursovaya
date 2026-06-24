@@ -79,7 +79,7 @@ const fetchDoctors = async () => {
     const response = await fetch('/api/admin/doctors');
     const data = await response.json();
     doctors.value = data;
-    console.log('Загружены врачи:', data);
+    
 };
 
 const fetchServices = async () => {
@@ -101,14 +101,14 @@ const fetchReviews = async () => {
     const response = await fetch('/api/admin/reviews');
     const data = await response.json();
     reviews.value = data;
-    console.log('Загружены отзывы:', data);
+    
 };
 
 const fetchPrices = async () => {
     const response = await fetch('/api/admin/prices');
     const data = await response.json();
     prices.value = data;
-    console.log('Загружены цены:', data);
+    
 };
 
 const getEmptyForm = () => {
@@ -250,7 +250,6 @@ const updateItem = async () => {
             alert('Ошибка: ' + JSON.stringify(errorData.errors || errorData));
         }
     } catch (err) {
-        console.error('Ошибка обновления:', err);
         alert('Ошибка при обновлении');
     } finally {
         loading.value = false;
