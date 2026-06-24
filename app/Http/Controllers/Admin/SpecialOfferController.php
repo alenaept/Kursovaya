@@ -13,7 +13,6 @@ class SpecialOfferController extends Controller
             $offers = SpecialOffer::all();
             return response()->json($offers);
         } catch (\Exception $e) {
-            \Log::error('SpecialOffer index error: ' . $e->getMessage());
             return response()->json(['error' => 'Ошибка загрузки'], 500);
         }
     }
@@ -30,7 +29,6 @@ class SpecialOfferController extends Controller
             $offer = SpecialOffer::create($validated);
             return response()->json($offer, 201);
         } catch (\Exception $e) {
-            \Log::error('SpecialOffer store error: ' . $e->getMessage());
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
