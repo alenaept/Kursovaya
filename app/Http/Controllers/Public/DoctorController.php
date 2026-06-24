@@ -6,7 +6,7 @@ use App\Models\Doctor;
 
 class DoctorController extends Controller
 {
-    // Список врачей
+    
     public function index()
     {
         $doctors = Doctor::select(
@@ -24,7 +24,7 @@ class DoctorController extends Controller
         return response()->json($doctors);
     }
     
-    //карточка
+
     public function show($id)
     {
         $doctor = Doctor::select(
