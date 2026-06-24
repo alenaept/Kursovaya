@@ -31,7 +31,7 @@ class ServiceController extends Controller
             $service = Service::create($validated);
             return response()->json($service, 201);
         } catch (\Exception $e) {
-            \Log::error('Service store error: ' . $e->getMessage());
+            
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
@@ -50,7 +50,7 @@ class ServiceController extends Controller
             $service->update($validated);
             return response()->json($service);
         } catch (\Exception $e) {
-            \Log::error('Service update error: ' . $e->getMessage());
+            
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
@@ -62,7 +62,7 @@ class ServiceController extends Controller
             $service->delete();
             return response()->json(null, 204);
         } catch (\Exception $e) {
-            \Log::error('Service destroy error: ' . $e->getMessage());
+            
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }

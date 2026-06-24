@@ -49,7 +49,7 @@ class SpecialOfferController extends Controller
             $offer->update($validated);
             return response()->json($offer);
         } catch (\Exception $e) {
-            \Log::error('SpecialOffer update error: ' . $e->getMessage());
+         
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
@@ -61,7 +61,7 @@ class SpecialOfferController extends Controller
             $offer->delete();
             return response()->json(null, 204);
         } catch (\Exception $e) {
-            \Log::error('SpecialOffer destroy error: ' . $e->getMessage());
+            
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
