@@ -26,11 +26,6 @@ class RequestController extends Controller
     public function lock($id)
     {
         $request = Request::findOrFail($id);
-        
-        if ($request->status === 'processing') {
-            return response()->json(['error' => 'Заявка уже обрабатывается другим администратором'], 409);
-        }
-        
 
         $adminId = auth()->guard('admin')->id() ?? 1;
         
