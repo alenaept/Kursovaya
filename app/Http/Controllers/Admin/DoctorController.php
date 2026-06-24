@@ -14,7 +14,7 @@ class DoctorController extends Controller
             $doctors = Doctor::all();
             return response()->json($doctors);
         } catch (\Exception $e) {
-            \Log::error('Doctor index error: ' . $e->getMessage());
+          
             return response()->json(['error' => 'Ошибка загрузки'], 500);
         }
     }
@@ -39,7 +39,6 @@ class DoctorController extends Controller
             
             return response()->json($doctor, 201);
         } catch (\Exception $e) {
-            \Log::error('Doctor store error: ' . $e->getMessage());
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
