@@ -33,7 +33,7 @@ class PriceController extends Controller
             
             return response()->json($grouped);
         } catch (\Exception $e) {
-            \Log::error('Price grouped error: ' . $e->getMessage());
+           
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
